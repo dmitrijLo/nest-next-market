@@ -40,7 +40,7 @@ export class ProductsService implements OnModuleInit {
 
   async findOne(uuid: string) {
     const product = await this.productRepository.findOne({
-      where: { id: uuid },
+      where: { uuid },
     });
     if (!product)
       throw new NotFoundException(`Product with ${uuid} not found.`);
