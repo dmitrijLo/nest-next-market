@@ -1,0 +1,121 @@
+[
+  {
+    "depth": 0,
+    "in_progress": false,
+    "done": false,
+    "notes": "",
+    "id": "1734090000_1000",
+    "created_at": 1734090000,
+    "text": "Backend (NestJS & Database)",
+    "category": "Backend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_1000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Define Product Schema (id, name, desc, price)",
+    "id": "1734090001_1001",
+    "created_at": 1734090001,
+    "text": "US-B1: Product Entity",
+    "category": "Backend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_1000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Implement POST endpoint to save new products",
+    "id": "1734090002_1002",
+    "created_at": 1734090002,
+    "text": "US-B2: Create Product API",
+    "category": "Backend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_1000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Implement GET endpoint to list all products",
+    "id": "1734090003_1003",
+    "created_at": 1734090003,
+    "text": "US-B3: Get Products API",
+    "category": "Backend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_1000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Implement PATCH endpoint",
+    "id": "1734090004_1004",
+    "created_at": 1734090004,
+    "text": "US-B4: Update Product API",
+    "category": "Backend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_1000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Implement DELETE endpoint",
+    "id": "1734090005_1005",
+    "created_at": 1734090005,
+    "text": "US-B5: Delete Product API",
+    "category": "Backend"
+  },
+  {
+    "depth": 0,
+    "in_progress": false,
+    "done": false,
+    "notes": "",
+    "id": "1734090000_2000",
+    "created_at": 1734090000,
+    "text": "Frontend (NextJS)",
+    "category": "Frontend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_2000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Display list or grid of products",
+    "id": "1734090011_2001",
+    "created_at": 1734090011,
+    "text": "US-F1: Product List UI",
+    "category": "Frontend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_2000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Form inputs for name, desc, price",
+    "id": "1734090012_2002",
+    "created_at": 1734090012,
+    "text": "US-F2: Create Product Form",
+    "category": "Frontend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_2000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Connect Frontend to Backend REST API",
+    "id": "1734090013_2003",
+    "created_at": 1734090013,
+    "text": "US-F3: API Integration",
+    "category": "Frontend"
+  },
+  {
+    "depth": 1,
+    "parent_id": "1734090000_2000",
+    "in_progress": false,
+    "done": false,
+    "notes": "Add buttons to edit/remove items",
+    "id": "1734090014_2004",
+    "created_at": 1734090014,
+    "text": "US-F4: Update/Delete UI",
+    "category": "Frontend"
+  }
+]
