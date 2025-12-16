@@ -8,6 +8,9 @@ import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
 import { CustomerModule } from './customer/customer.module';
 import { OrdersModule } from './orders/orders.module';
+import { Customer } from './customer/entities/customer.entity';
+import { Order } from './orders/entities/order.entity';
+import { OrderItem } from './orders/entities/order-item.entity';
 
 @Module({
   imports: [
@@ -18,7 +21,7 @@ import { OrdersModule } from './orders/orders.module';
       useFactory: (configSrv: ConfigService) => ({
         type: 'postgres',
         url: configSrv.getOrThrow<string>('DATABASE_URL'),
-        entities: [Product],
+        entities: [Product, Customer, Order, OrderItem],
         synchronize: configSrv.get('NODE_ENV') !== 'production', // ONLY FOR DEVELOPMENT!!!
       }),
     }),
