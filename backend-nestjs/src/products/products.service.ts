@@ -43,7 +43,7 @@ export class ProductsService implements OnModuleInit {
       where: { uuid },
     });
     if (!product)
-      throw new NotFoundException(`Product with ${uuid} not found.`);
+      throw new NotFoundException(`product with #${uuid} not found`);
     return product;
   }
 
@@ -59,7 +59,7 @@ export class ProductsService implements OnModuleInit {
   async remove(uuid: string) {
     const { affected } = await this.productRepository.delete(uuid);
     if (!affected) {
-      throw new NotFoundException(`Product with id ${uuid} not found`);
+      throw new NotFoundException(`product with id #${uuid} not found`);
     }
   }
 }

@@ -23,7 +23,12 @@ export class ProductsController {
 
   @Get()
   @ApiOperation({ summary: 'Get all products' })
-  @ApiResponse({ status: 200, description: 'Return all products.' })
+  @ApiResponse({
+    status: 200,
+    description: 'Return all products.',
+    type: [Product],
+  })
+  // TODO: query für Pagination, limit Response
   allProducts(): Promise<Product[]> {
     return this.productsService.findAll();
   }
@@ -32,21 +37,27 @@ export class ProductsController {
   @ApiOperation({ summary: 'Create product' })
   @ApiResponse({
     status: 201,
-    description: 'The product has beed successfully created.',
+    description: 'The product has been successfully created.',
+    type: Product,
   })
   @ApiResponse({
     status: 400,
     description: 'Bad Request. Invalid data.',
   })
   @HttpCode(HttpStatus.CREATED)
+  // TODO: Auth
   createProduct(@Body() createProductDto: CreateProductDto): Promise<Product> {
     return this.productsService.create(createProductDto);
   }
 
   @Get(':uuid')
   @ApiOperation({ summary: 'Get product by UUID' })
-  @ApiResponse({ status: 200, description: 'Return the product.' })
-  @ApiResponse({ status: 204, description: 'Product not found.' })
+  @ApiResponse({
+    status: 200,
+    description: 'Return the product.',
+    type: Product,
+  })
+  @ApiResponse({ status: 404, description: 'Product not found.' })
   findProductByUuid(
     @Param('uuid', ParseUUIDPipe) uuid: string,
   ): Promise<Product> {
@@ -58,12 +69,14 @@ export class ProductsController {
   @ApiResponse({
     status: 200,
     description: 'The product has been successfuly updated.',
+    type: Product,
   })
   @ApiResponse({
     status: 400,
     description: 'Bad Request. Invalid data.',
   })
   @ApiResponse({ status: 404, description: 'Product not found.' })
+  // TODO: Auch hier Auth
   updateProduct(
     @Param('uuid', ParseUUIDPipe) uuid: string,
     @Body() updateProductDto: UpdateProductDto,
@@ -74,7 +87,9 @@ export class ProductsController {
   @Delete(':uuid')
   @ApiOperation({ summary: 'Delete product' })
   @ApiResponse({ status: 204, description: 'Product deleted successfully.' })
+  @ApiResponse({ status: 404, description: 'Product not found.' })
   @HttpCode(HttpStatus.NO_CONTENT)
+  // TODO: Auch hier Auth
   remove(@Param('uuid', ParseUUIDPipe) uuid: string): Promise<void> {
     return this.productsService.remove(uuid);
   }
