@@ -6,7 +6,9 @@ services:
       dockerfile: Dockerfile.dev
     ports: ["5174:3000"]
     profiles: [dev]
-    environment: ["BACKEND_API_URL=${BACKEND_API_URL}"]
+    environment:
+      - "INTERNAL_API_URL=${BACKEND_API_URL}"
+      - "NEXT_PUBLIC_API_URL=${PUBLIC_API_URL}"
     volumes: ["./frontend-nextjs:/app", "/app/node_modules"]
 
   backend-nestjs-dev:

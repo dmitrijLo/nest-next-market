@@ -4,3 +4,5 @@ export interface Product {
   description: string;
   price: number;
 }
+
+export type ProductDto = Omit<Product, "uuid">;
