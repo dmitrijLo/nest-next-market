@@ -8,6 +8,11 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./backend-nestjs
+
     steps:
       - name: checkout code
         uses: actions/checkout@v6
@@ -35,7 +40,7 @@ jobs:
         with:
           name: nestjs-backend-build
           path: |
-            dist/
-            package.json
-            package-lock.json
+            backend-nestjs/dist/
+            backend-nestjs/package.json
+            backend-nestjs/package-lock.json
           retention-days: 7
