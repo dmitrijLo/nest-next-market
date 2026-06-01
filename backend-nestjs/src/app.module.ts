@@ -22,7 +22,7 @@ import { OrderItem } from './orders/entities/order-item.entity';
         type: 'postgres',
         url: configSrv.getOrThrow<string>('DATABASE_URL'),
         entities: [Product, Customer, Order, OrderItem],
-        synchronize: configSrv.get('NODE_ENV') !== 'production', // ONLY FOR DEVELOPMENT!!!
+        synchronize: true, //configSrv.get('NODE_ENV') !== 'production', // ONLY FOR DEVELOPMENT!!!
       }),
     }),
     ProductsModule,
