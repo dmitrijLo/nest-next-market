@@ -1,8 +1,8 @@
-name: NestJS Backend CD
+name: NestJS CD Walkthrough
 
 on:
   workflow_run:
-    workflows: ["NestJS Backend CI"]
+    workflows: ["NestJS CI Walkthrough"]
     types:
       - completed
     branches:
